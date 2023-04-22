@@ -1,0 +1,72 @@
+<html>
+<head>
+  <title>陆安高三（7）班</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+    h1 {
+      text-align: center;
+      color: #333333;
+    }
+    #chatbox {
+      width: 80%;
+      height: 400px;
+      margin: 20px auto;
+      border: 1px solid #cccccc;
+      overflow-y: scroll;
+      background-color: #ffffff;
+    }
+    #message {
+      width: 80%;
+      margin: 10px auto;
+    }
+    #send {
+      width: 10%;
+      margin: 10px auto;
+    }
+    .user {
+      color: #0000ff;
+      font-weight: bold;
+    }
+    .bot {
+      color: #ff0000;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>欢迎来到陆安高三（7）班的网站</h1>
+  <div id="chatbox"></div>
+  <input type="text" id="message" placeholder="输入你想说的话">
+  <button id="send">发送</button>
+  <script>
+    // 获取元素
+    var chatbox = document.getElementById("chatbox");
+    var message = document.getElementById("message");
+    var send = document.getElementById("send");
+
+    // 定义一个机器人对象，用于回复用户的消息
+    var bot = {
+      name: "小助理",
+      reply: function (text) {
+        // 根据用户的消息，返回一个合适的回复
+        // 这里只是一个简单的示例，你可以根据自己的需求修改
+        if (text.includes("你好") || text.includes("您好")) {
+          return "你好，我是小助理，很高兴为你服务。";
+        } else if (text.includes("你是谁") || text.includes("你叫什么")) {
+          return "我是小助理，我是这个网站的管理员，也是你们班级的好朋友。";
+        } else if (text.includes("我们班") || text.includes("班级")) {
+          return "你们班是陆安高三（7）班，是一个优秀的班级，有着勤奋学习和团结友爱的风气。";
+        } else if (text.includes("今天") || text.includes("日期")) {
+          return "今天是" + new Date().toLocaleDateString() + "，祝你有一个美好的一天。";
+        } else if (text.includes("时间") || text.includes("几点")) {
+          return "现在是" + new Date().toLocaleTimeString() + "，请注意休息和安排好自己的时间。";
+        } else if (text.includes("天气") || text.includes("气温")) {
+          return "今天的天气是晴朗的，气温是25度，适合出去活动和锻炼身体。";
+        } else if (text.includes("学习") || text.includes("考试")) {
+          return "学习是一件很重要的事情，要坚持每天复习和预习，积累知识和能力。考试是检验学习效果的一种方式，要认真对待，不要紧张和放弃。";
+        } else if (text.includes("玩") || text.includes("娱乐")) {
+          return "玩是一种放松和调节心情的方法，要适当地享受生活和娱乐，但不要过度沉迷和影响学习。";
+        } else if (text.includes("谢
